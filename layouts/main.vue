@@ -3,15 +3,15 @@
 <template>
     <div>
         <!-- Topnav -->
-        <div class="navbar fixed bg-base-100">
+        <div class="navbar fixed z-10 bg-base-100/60 backdrop-blur-sm">
             <div class="flex-1">
-                <a class="btn btn-ghost btn-md text-xl normal-case">Desdevol</a>
+                <a href="/" class="btn btn-ghost btn-md text-xl normal-case">Desdevol</a>
             </div>
             <div class="flex-none">
                 <ul class="menu menu-horizontal p-0">
-                    <NuxtLink to="/#about" class="btn btn-ghost btn-md mx-1 normal-case">About</NuxtLink>
+                    <a href="/#about" class="btn btn-ghost btn-md mx-1 normal-case">About</a>
                     <NuxtLink to="/project" class="btn btn-ghost btn-md mx-1 normal-case">Projects</NuxtLink>
-                    <NuxtLink to="/#contact" class="btn btn-ghost btn-md mx-1 normal-case">Contact</NuxtLink>
+                    <a href="/#contact" class="btn btn-ghost btn-md mx-1 normal-case">Contact</a>
                 </ul>
             </div>
         </div>

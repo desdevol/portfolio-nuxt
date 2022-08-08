@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import Content from '~~/layouts/content.vue'
 useHead({
     title: 'Project | Desdevol',
     meta: [
@@ -14,7 +15,7 @@ useHead({
 </script>
 
 <template>
-    <div>Page: foo</div>
+    <Content>Page: foo</Content>
 </template>
 
 <style scoped></style>
