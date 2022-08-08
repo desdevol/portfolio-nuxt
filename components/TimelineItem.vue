@@ -10,7 +10,7 @@ defineProps<TimelineItem>()
 </script>
 
 <template>
-    <div class="flex-grow pl-4">
+    <div class="flex-grow pl-6">
         <div class="title-font mb-1 text-sm font-medium tracking-wider dark:text-white">
             {{ date }}
         </div>
