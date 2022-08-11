@@ -15,10 +15,13 @@
                 </ul>
             </div>
         </div>
-        <div class="container mx-auto px-10">
-            <slot />
-        </div>
+
+        <slot />
     </div>
 </template>
 
-<style scoped></style>
+<style>
+html {
+    scroll-behavior: smooth;
+}
+</style>

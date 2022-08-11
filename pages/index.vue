@@ -49,10 +49,21 @@ const timelineItems = [
         ],
     },
 ]
+
+const contact = {
+    github: 'https://github.com/desdevol',
+    linkedIn: 'https://www.linkedin.com/in/desmond-lee-yong-wei',
+    instagram: 'https://www.instagram.com/desdevol',
+    email: 'desleeyw@gmail.com',
+    discord: 'desdevol#2880',
+}
 </script>
 
 <template>
-    <div>
+    <div class="container mx-auto px-10">
+        <!-- =============================================================== -->
+        <!--                               HERO                              -->
+        <!-- =============================================================== -->
         <section class="hero-section">
             <div>
                 <h1 class="block h-fit w-full text-6xl">
@@ -91,19 +102,83 @@ const timelineItems = [
             <h3 class="mb-4 text-2xl font-bold">My Experience</h3>
             <Timeline :items="timelineItems"></Timeline>
         </section>
-
-        <!-- =============================================================== -->
-        <!--                             CONTACT                             -->
-        <!-- =============================================================== -->
     </div>
+    <!-- =============================================================== -->
+    <!--                             CONTACT                             -->
+    <!-- =============================================================== -->
+    <section class="contact-section" id="contact">
+        <div class="content">
+            <h2 class="section-title pb-14 text-center">Contact</h2>
+
+            <div class="mb-12 flex justify-center">
+                <div class="grid" :style="{ gridTemplateColumns: 'min-content 1fr', gridGap: '16px 12px' }">
+                    <div class="flex justify-center">
+                        <font-awesome-icon icon="fab fa-discord" size="2xl" />
+                    </div>
+                    <span class="text-2xl">{{ contact.discord }}</span>
+
+                    <div class="flex justify-center">
+                        <font-awesome-icon icon="fas fa-envelope" size="2xl" />
+                    </div>
+                    <span class="text-2xl">{{ contact.email }}</span>
+                </div>
+            </div>
+
+            <div class="flex justify-center">
+                <a :href="contact.github" class="contact-floating-item px-6" target="_blank" rel="noopener">
+                    <font-awesome-icon icon="fab fa-github" size="6x" />
+                </a>
+                <a :href="contact.linkedIn" class="contact-floating-item px-6" target="_blank" rel="noopener">
+                    <font-awesome-icon icon="fab fa-linkedin" size="6x" />
+                </a>
+                <a :href="contact.instagram" class="contact-floating-item px-6" target="_blank" rel="noopener">
+                    <font-awesome-icon icon="fab fa-instagram" size="6x" />
+                </a>
+            </div>
+        </div>
+    </section>
 </template>
 
 <style lang="scss" scoped>
 .hero-section {
     @apply m-auto flex h-screen w-4/5 flex-row flex-wrap items-center justify-center;
 }
+
 .content-section {
-    @apply m-auto mb-6 lg:w-3/4 xl:w-3/5;
+    @apply pt-14;
+}
+
+.contact-section {
+    @apply flex h-screen flex-wrap;
+    .content {
+        @apply m-auto items-center py-12 lg:w-3/4 xl:w-3/5;
+
+        .contact-floating-item {
+            transition: ease-in-out 0.2s;
+            &:hover {
+                filter: drop-shadow(0 1.6em 1rem #00000035);
+                scale: 1.1;
+                transition: ease-in-out 0.2s;
+            }
+        }
+    }
+    background: linear-gradient(to right top, #232931, #363554, #42202f, #232931);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+
+    @keyframes gradient {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
 }
 .section-title {
     @apply my-6 text-3xl font-extrabold uppercase;
