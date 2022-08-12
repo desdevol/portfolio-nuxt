@@ -88,19 +88,27 @@ const contact = {
         <section class="content-section about-section mb-6" id="about">
             <h2 class="section-title">About Me</h2>
 
-            <div class="mb-8">
-                <p>
-                    Graduated from Southern University College, I've been in the web development industry for 4 years.
-                </p>
-                <p>
-                    I believe in "quality over quantity" for every product. Hence, over the time I've tried to improve
-                    myself and improve the quality of work I can produce.
-                </p>
-            </div>
+            <div class="mb-8 grid grid-cols-[200px_minmax(auto,_1fr)] gap-10">
+                <img
+                    class="portrait-image"
+                    src="https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+                    alt="Desmond Lee"
+                />
+                <div>
+                    <p>
+                        Graduated from Southern University College, I've been in the web development industry for 4
+                        years.
+                    </p>
+                    <p>
+                        I believe in "quality over quantity" for every product. Hence, over the time I've tried to
+                        improve myself and improve the quality of work I can produce.
+                    </p>
 
-            <!-- Experience -->
-            <h3 class="mb-4 text-2xl font-bold">My Experience</h3>
-            <Timeline :items="timelineItems"></Timeline>
+                    <!-- Experience -->
+                    <h3 class="mt-5 mb-4 text-2xl font-bold">My Experience</h3>
+                    <Timeline :items="timelineItems"></Timeline>
+                </div>
+            </div>
         </section>
     </div>
     <!-- =============================================================== -->
@@ -145,7 +153,19 @@ const contact = {
 }
 
 .content-section {
-    @apply pt-14;
+    @apply m-auto mb-14 pt-14 lg:w-3/4 xl:w-3/5;
+}
+
+.about-section {
+    p {
+        @apply pb-2;
+    }
+    .portrait-image {
+        object-fit: cover;
+        border-radius: 20px;
+        // width: 200px;
+        filter: grayscale(0.6);
+    }
 }
 
 .contact-section {
