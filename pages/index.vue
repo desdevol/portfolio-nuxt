@@ -88,7 +88,7 @@ const contact = {
         <section class="content-section about-section mb-6" id="about">
             <h2 class="section-title">About Me</h2>
 
-            <div class="mb-8 grid grid-cols-[200px_minmax(auto,_1fr)] gap-10">
+            <div class="mb-8 grid grid-cols-1 gap-10 sm:grid-cols-[200px_minmax(auto,_1fr)]">
                 <img
                     class="portrait-image"
                     src="https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
@@ -121,26 +121,26 @@ const contact = {
             <div class="mb-12 flex justify-center">
                 <div class="grid" :style="{ gridTemplateColumns: 'min-content 1fr', gridGap: '16px 12px' }">
                     <div class="flex justify-center">
-                        <font-awesome-icon icon="fab fa-discord" size="2xl" />
+                        <font-awesome-icon icon="fab fa-discord" class="text-2xl md:text-3xl" />
                     </div>
-                    <span class="text-2xl">{{ contact.discord }}</span>
+                    <span class="text-lg md:text-2xl">{{ contact.discord }}</span>
 
                     <div class="flex justify-center">
-                        <font-awesome-icon icon="fas fa-envelope" size="2xl" />
+                        <font-awesome-icon icon="fas fa-envelope" class="text-2xl md:text-3xl" />
                     </div>
-                    <span class="text-2xl">{{ contact.email }}</span>
+                    <span class="text-lg md:text-2xl">{{ contact.email }}</span>
                 </div>
             </div>
 
             <div class="flex justify-center">
                 <a :href="contact.github" class="contact-floating-item px-6" target="_blank" rel="noopener">
-                    <font-awesome-icon icon="fab fa-github" size="6x" />
+                    <font-awesome-icon icon="fab fa-github" class="text-6xl md:text-8xl" />
                 </a>
                 <a :href="contact.linkedIn" class="contact-floating-item px-6" target="_blank" rel="noopener">
-                    <font-awesome-icon icon="fab fa-linkedin" size="6x" />
+                    <font-awesome-icon icon="fab fa-linkedin" class="text-6xl md:text-8xl" />
                 </a>
                 <a :href="contact.instagram" class="contact-floating-item px-6" target="_blank" rel="noopener">
-                    <font-awesome-icon icon="fab fa-instagram" size="6x" />
+                    <font-awesome-icon icon="fab fa-instagram" class="text-6xl md:text-8xl" />
                 </a>
             </div>
         </div>
@@ -153,7 +153,7 @@ const contact = {
 }
 
 .content-section {
-    @apply m-auto mb-14 pt-14 lg:w-3/4 xl:w-3/5;
+    @apply m-auto mb-14 w-full pt-14 lg:w-3/4 xl:w-3/5;
 }
 
 .about-section {
@@ -163,7 +163,7 @@ const contact = {
     .portrait-image {
         object-fit: cover;
         border-radius: 20px;
-        // width: 200px;
+        max-width: 200px;
         filter: grayscale(0.6);
     }
 }
