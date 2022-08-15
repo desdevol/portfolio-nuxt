@@ -1,4 +1,8 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const store = useStore()
+
+const isSidebarOpened = computed(() => store.isSidebarOpened)
+</script>
 
 <template>
     <div>
@@ -7,21 +11,64 @@
             <div class="flex-1">
                 <a href="/" class="btn btn-ghost btn-md text-xl normal-case">Desdevol</a>
             </div>
-            <div class="flex-none">
+            <!-- Nav Item -->
+            <div class="hidden flex-none md:block">
                 <ul class="menu menu-horizontal p-0">
                     <a href="/#about" class="btn btn-ghost btn-md mx-1 normal-case">About</a>
                     <NuxtLink to="/project" class="btn btn-ghost btn-md mx-1 normal-case">Projects</NuxtLink>
                     <a href="/#contact" class="btn btn-ghost btn-md mx-1 normal-case">Contact</a>
                 </ul>
             </div>
+            <!-- Sidebar Toggle -->
+            <button class="btn btn-ghost md:hidden" @click="store.openSidebar">
+                <font-awesome-icon icon="fas fa-bars" class="text-xl" />
+            </button>
         </div>
-
+        <!-- Sidebar/Drawer -->
+        <Transition name="slide">
+            <div
+                v-show="isSidebarOpened"
+                class="fixed right-0 z-20 h-screen w-full overflow-y-auto bg-white p-4 dark:bg-zinc-900"
+                tabindex="-1"
+            >
+                <div class="flex justify-between">
+                    <a href="/" class="btn btn-ghost btn-md text-xl normal-case">Desdevol</a>
+                    <button class="btn" @click="store.closeSidebar">
+                        <font-awesome-icon icon="fas fa-close" class="text-xl" />
+                    </button>
+                </div>
+                <div class="mt-5">
+                    <a href="/#about" class="sidebar-item" @click="store.closeSidebar">About</a>
+                    <NuxtLink to="/project" class="sidebar-item" @click="store.closeSidebar">Projects</NuxtLink>
+                    <a href="/#contact" class="sidebar-item" @click="store.closeSidebar">Contact</a>
+                </div>
+            </div>
+        </Transition>
         <slot />
     </div>
 </template>
 
-<style>
+<style lang="scss">
 html {
     scroll-behavior: smooth;
+}
+
+.sidebar-item {
+    @apply block rounded-md px-5 py-4 text-xl font-bold normal-case hover:bg-gray-600;
+
+    &:active {
+        @apply bg-gray-600;
+    }
+}
+
+.slide-enter-active,
+.slide-leave-active {
+    transition: all 0.25s;
+}
+
+.slide-enter-from,
+.slide-leave-to {
+    transform: translateX(50vw);
+    opacity: 0;
 }
 </style>

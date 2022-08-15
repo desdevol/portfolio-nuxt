@@ -116,12 +116,12 @@ const contact = {
             <div class="mb-12 flex justify-center">
                 <div class="grid" :style="{ gridTemplateColumns: 'min-content 1fr', gridGap: '16px 12px' }">
                     <div class="flex justify-center">
-                        <font-awesome-icon icon="fab fa-discord" class="text-2xl md:text-3xl" />
+                        <font-awesome-icon icon="fab fa-discord" class="text-2xl md:text-3xl" title="Discord" />
                     </div>
                     <span class="text-lg md:text-2xl">{{ contact.discord }}</span>
 
                     <div class="flex justify-center">
-                        <font-awesome-icon icon="fas fa-envelope" class="text-2xl md:text-3xl" />
+                        <font-awesome-icon icon="fas fa-envelope" class="text-2xl md:text-3xl" title="Email" />
                     </div>
                     <span class="text-lg md:text-2xl">{{ contact.email }}</span>
                 </div>
@@ -129,13 +129,21 @@ const contact = {
 
             <div class="flex justify-center">
                 <a :href="contact.github" class="contact-floating-item px-6" target="_blank" rel="noopener">
-                    <font-awesome-icon icon="fab fa-github" class="text-6xl md:text-8xl" />
+                    <font-awesome-icon icon="fab fa-github" class="text-5xl sm:text-6xl md:text-8xl" title="Github" />
                 </a>
                 <a :href="contact.linkedIn" class="contact-floating-item px-6" target="_blank" rel="noopener">
-                    <font-awesome-icon icon="fab fa-linkedin" class="text-6xl md:text-8xl" />
+                    <font-awesome-icon
+                        icon="fab fa-linkedin"
+                        class="text-5xl sm:text-6xl md:text-8xl"
+                        title="LinkedIn"
+                    />
                 </a>
                 <a :href="contact.instagram" class="contact-floating-item px-6" target="_blank" rel="noopener">
-                    <font-awesome-icon icon="fab fa-instagram" class="text-6xl md:text-8xl" />
+                    <font-awesome-icon
+                        icon="fab fa-instagram"
+                        class="text-5xl sm:text-6xl md:text-8xl"
+                        title="Instagram"
+                    />
                 </a>
             </div>
         </div>
