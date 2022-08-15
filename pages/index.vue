@@ -74,11 +74,10 @@ const contact = {
                 </h2>
 
                 <p class="mt-5">
-                    I'm a software engineer mostly specialized in front-end. <br />
                     I can make web applications, websites, and ocassionally designing namecards, logo and banners.
                 </p>
 
-                <a href="#about" class="btn btn-outline btn-primary mt-8">Get To Know Me</a>
+                <a href="#about" class="btn btn-primary mt-8">Get To Know Me</a>
             </div>
         </section>
 
@@ -89,19 +88,15 @@ const contact = {
             <h2 class="section-title">About Me</h2>
 
             <div class="mb-8 grid grid-cols-1 gap-10 sm:grid-cols-[200px_minmax(auto,_1fr)]">
-                <img
-                    class="portrait-image"
-                    src="https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
-                    alt="Desmond Lee"
-                />
+                <img class="portrait-image" src="~/assets/img/portrait.jpg" alt="Desmond Lee" />
                 <div>
                     <p>
                         Graduated from Southern University College, I've been in the web development industry for 4
-                        years.
+                        years. Mostly specialized in frontend, Vue.js
                     </p>
                     <p>
-                        I believe in "quality over quantity" for every product. Hence, over the time I've tried to
-                        improve myself and improve the quality of work I can produce.
+                        I believe in <span class="font-bold italic">quality over quantity</span> for product. Hence,
+                        over the time I've tried to improve myself and improve the quality of work I can produce.
                     </p>
 
                     <!-- Experience -->
@@ -164,7 +159,7 @@ const contact = {
         object-fit: cover;
         border-radius: 20px;
         max-width: 200px;
-        filter: grayscale(0.6);
+        filter: brightness(0.85) grayscale(0.1);
     }
 }
 
