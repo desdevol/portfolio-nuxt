@@ -66,10 +66,10 @@ const contact = {
         <!-- =============================================================== -->
         <section class="hero-section">
             <div>
-                <h1 class="block h-fit w-full text-6xl">
+                <h1 class="block h-fit w-full text-4xl md:text-6xl">
                     Hi, I am <span class="font-bold text-primary">Desmond Lee</span>
                 </h1>
-                <h2 class="block h-fit w-full text-4xl">
+                <h2 class="block h-fit w-full text-2xl md:text-4xl">
                     A <span class="font-bold text-primary">Web Developer</span> from Johor, Malaysia
                 </h2>
 
@@ -77,7 +77,14 @@ const contact = {
                     I can make web applications, websites, and ocassionally designing namecards, logo and banners.
                 </p>
 
-                <a href="#about" class="btn btn-primary mt-8">Get To Know Me</a>
+                <div class="flex gap-4">
+                    <a href="#project" class="btn btn-primary mt-8">See My Work</a>
+                    <a href="#about" class="btn mt-8">Get To Know Me</a>
+                </div>
+                <div class="orb-canvas">
+                    <span class="orb"></span>
+                    <span class="orb"></span>
+                </div>
             </div>
         </section>
 
@@ -102,6 +109,18 @@ const contact = {
                     <!-- Experience -->
                     <h3 class="mt-5 mb-4 text-2xl font-bold">My Experience</h3>
                     <Timeline :items="timelineItems"></Timeline>
+
+                    <!-- Tech Stack -->
+                    <h3 class="mt-5 mb-4 text-2xl font-bold">My Tech Stack</h3>
+                    <div class="flex gap-4">
+                        <font-awesome-icon icon="fab fa-vuejs" class="text-2xl md:text-3xl" title="Vue JS" />
+                        <font-awesome-icon icon="fab fa-laravel" class="text-2xl md:text-3xl" title="Laravel" />
+
+                        <font-awesome-icon icon="fab fa-sass" class="text-2xl md:text-3xl" title="Sass" />
+                        <font-awesome-icon icon="fab fa-git-alt" class="text-2xl md:text-3xl" title="Git" />
+                        <font-awesome-icon icon="fab fa-linux" class="text-2xl md:text-3xl" title="Linux" />
+                        <font-awesome-icon icon="fab fa-" class="text-2xl md:text-3xl" title="Linux" />
+                    </div>
                 </div>
             </div>
         </section>
@@ -153,6 +172,50 @@ const contact = {
 <style lang="scss" scoped>
 .hero-section {
     @apply m-auto flex h-screen w-4/5 flex-row flex-wrap items-center justify-center;
+
+    @keyframes move {
+        100% {
+            transform: translate3d(0, 0, 1px) rotate(360deg);
+        }
+    }
+    $orbSize: 450px;
+    $animationDuration: 6s;
+    $amount: 2;
+    .orb-canvas {
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+
+        .orb {
+            overflow-x: hidden;
+            overflow-y: visible;
+            width: $orbSize;
+            height: $orbSize;
+            border-radius: $orbSize;
+            backface-visibility: hidden;
+            position: absolute;
+            animation-name: move;
+            animation-duration: $animationDuration;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+
+            $colors: #4b2033, #423453;
+            @for $i from 1 through length($colors) {
+                &:nth-child(#{$i}) {
+                    background: nth($colors, $i);
+                    filter: blur(60px) brightness(0.75);
+                    top: $i * 10 + 10%;
+                    left: $i * 15 + 20%;
+                    animation-duration: calc(random($animationDuration * 10) / 10) * 1s + 15s;
+                    animation-delay: calc(random(($animationDuration + 10s) * 10) / 10) * -1s;
+                    transform-origin: 0;
+                }
+            }
+        }
+    }
 }
 
 .content-section {
@@ -185,23 +248,10 @@ const contact = {
             }
         }
     }
-    background: linear-gradient(to right top, #232931, #363554, #42202f, #232931);
-    background-size: 400% 400%;
-    animation: gradient 10s ease infinite;
-
-    @keyframes gradient {
-        0% {
-            background-position: 0% 50%;
-        }
-
-        50% {
-            background-position: 100% 50%;
-        }
-
-        100% {
-            background-position: 0% 50%;
-        }
-    }
+    background: radial-gradient(ellipse at top, #151515, transparent),
+        radial-gradient(ellipse at bottom, #4b2033, transparent);
+    background-size: 100% 100%;
+    background-position: 80px;
 }
 .section-title {
     @apply my-6 text-3xl font-extrabold uppercase;

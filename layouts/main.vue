@@ -15,7 +15,9 @@ const isSidebarOpened = computed(() => store.isSidebarOpened)
             <div class="hidden flex-none md:block">
                 <ul class="menu menu-horizontal p-0">
                     <a href="/#about" class="btn btn-ghost btn-md mx-1 normal-case">About</a>
-                    <NuxtLink to="/project" class="btn btn-ghost btn-md mx-1 normal-case">Projects</NuxtLink>
+                    <NuxtLink to="/project" class="btn btn-ghost btn-md mx-1 normal-case" activeClass="bg-zinc-700"
+                        >Projects</NuxtLink
+                    >
                     <a href="/#contact" class="btn btn-ghost btn-md mx-1 normal-case">Contact</a>
                 </ul>
             </div>
@@ -44,6 +46,7 @@ const isSidebarOpened = computed(() => store.isSidebarOpened)
                 </div>
             </div>
         </Transition>
+
         <slot />
     </div>
 </template>
@@ -56,8 +59,8 @@ html {
 .sidebar-item {
     @apply block rounded-md px-5 py-4 text-xl font-bold normal-case hover:bg-gray-600;
 
-    &:active {
-        @apply bg-gray-600;
+    &:target {
+        @apply bg-zinc-600;
     }
 }
 
