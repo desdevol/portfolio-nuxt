@@ -15,9 +15,7 @@ const isSidebarOpened = computed(() => store.isSidebarOpened)
             <div class="hidden flex-none md:block">
                 <ul class="menu menu-horizontal p-0">
                     <a href="/#about" class="btn btn-ghost btn-md mx-1 normal-case">About</a>
-                    <NuxtLink to="/project" class="btn btn-ghost btn-md mx-1 normal-case" activeClass="bg-zinc-700"
-                        >Projects</NuxtLink
-                    >
+                    <a href="/#project" class="btn btn-ghost btn-md mx-1 normal-case">Projects</a>
                     <a href="/#contact" class="btn btn-ghost btn-md mx-1 normal-case">Contact</a>
                 </ul>
             </div>
@@ -41,7 +39,7 @@ const isSidebarOpened = computed(() => store.isSidebarOpened)
                 </div>
                 <div class="mt-5">
                     <a href="/#about" class="sidebar-item" @click="store.closeSidebar">About</a>
-                    <NuxtLink to="/project" class="sidebar-item" @click="store.closeSidebar">Projects</NuxtLink>
+                    <a href="/#project" class="sidebar-item" @click="store.closeSidebar">Projects</a>
                     <a href="/#contact" class="sidebar-item" @click="store.closeSidebar">Contact</a>
                 </div>
             </div>
