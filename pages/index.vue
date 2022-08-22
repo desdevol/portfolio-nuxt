@@ -65,7 +65,7 @@ const projects = [
     },
     {
         title: 'Interactive Site Plan Editor',
-        desc: 'An editor that lets you plot polygons on image then exports in GeoJSON. Useful for building editor floor plan.',
+        desc: 'An editor that lets you plot polygons on image then exports in GeoJSON. Useful for building editor for site plan/floor plan.',
         url: 'https://interactive-site-plan-editor.netlify.app/',
         img: 'img/interactive-site-plan-editor-preview.png',
         techUsed: ['Vue 3', 'Vuex', 'Quasar', 'Leaftet.js'],
@@ -104,7 +104,8 @@ const contact = {
                 </h2>
 
                 <p class="mt-5">
-                    I can make web applications, websites, and ocassionally designing namecards, logo and banners.
+                    I am proficient in developing web applications and websites. <br />
+                    I am also enthusiastic and refreshing with designs of business cards and logos.
                 </p>
 
                 <div class="flex gap-4">
