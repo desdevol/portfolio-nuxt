@@ -3,7 +3,6 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
-
 useHead({
     title: 'Desdevol',
     meta: [
@@ -13,6 +12,10 @@ useHead({
             hid: 'description',
             name: 'description',
             content: 'Desmond Lee. Web developer from Malaysia. Tech stack: Vue, Laravel.',
+        },
+        {
+            property: 'og:image',
+            content: '/website-thumbnail.png',
         },
     ],
 })
