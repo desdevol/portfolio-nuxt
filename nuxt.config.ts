@@ -12,4 +12,5 @@ export default defineNuxtConfig({
         title: 'Desdevol',
         link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }],
     },
+    routes: { '/': { prerender: true }, '/*': { cors: true } },
 })
