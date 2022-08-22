@@ -1,4 +1,9 @@
 <script lang="ts" setup>
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
+
 useHead({
     title: 'Desdevol',
     meta: [
@@ -21,7 +26,7 @@ const timelineItems = [
             'Developing frontend control panel with Vue',
             'Writing custom Vue components',
             'Developing interactive site plan with leaflet.js',
-            'Workng with agile team with tools like Jira',
+            'Working with agile team with tools like Jira',
             'Deploying Vue, Nuxt sites with pm2',
         ],
     },
@@ -50,6 +55,30 @@ const timelineItems = [
     },
 ]
 
+const projects = [
+    {
+        title: 'Igfy',
+        desc: 'A simple web app to let you mock and replace content of a instagram post then export into SVG!',
+        url: 'https://igfy-fillup.netlify.app/',
+        img: 'img/igfy-mobile-preview.png',
+        techUsed: ['Vue 3', 'Primevue'],
+    },
+    {
+        title: 'Interactive Site Plan Editor',
+        desc: 'An editor that lets you plot polygons on image then exports in GeoJSON. Useful for building editor floor plan.',
+        url: 'https://interactive-site-plan-editor.netlify.app/',
+        img: 'img/interactive-site-plan-editor-preview.png',
+        techUsed: ['Vue 3', 'Vuex', 'Quasar', 'Leaftet.js'],
+    },
+    {
+        title: 'Vuepress Note',
+        desc: 'A simple docs built with Vuepress to note down my wordpress learnings.',
+        url: 'https://wordpress-notes.netlify.app/',
+        img: 'img/wordpress-preview.png',
+        techUsed: ['Vue 2', 'Vuepress'],
+    },
+]
+
 const contact = {
     github: 'https://github.com/desdevol',
     linkedIn: 'https://www.linkedin.com/in/desmond-lee-yong-wei',
@@ -67,7 +96,8 @@ const contact = {
         <section class="hero-section">
             <div>
                 <h1 class="block h-fit w-full text-4xl md:text-6xl">
-                    Hi, I am <span class="font-bold text-primary">Desmond Lee</span>
+                    Hi, I am
+                    <span class="highlighted-text">Desmond Lee</span>
                 </h1>
                 <h2 class="block h-fit w-full text-2xl md:text-4xl">
                     A <span class="font-bold text-primary">Web Developer</span> from Johor, Malaysia
@@ -119,9 +149,18 @@ const contact = {
                         <font-awesome-icon icon="fab fa-sass" class="text-2xl md:text-3xl" title="Sass" />
                         <font-awesome-icon icon="fab fa-git-alt" class="text-2xl md:text-3xl" title="Git" />
                         <font-awesome-icon icon="fab fa-linux" class="text-2xl md:text-3xl" title="Linux" />
-                        <font-awesome-icon icon="fab fa-" class="text-2xl md:text-3xl" title="Linux" />
                     </div>
                 </div>
+            </div>
+        </section>
+        <!-- =============================================================== -->
+        <!--                             PROJECT                             -->
+        <!-- =============================================================== -->
+        <section class="project-section" id="project">
+            <h2 class="section-title pb-8">Projects</h2>
+
+            <div class="project-container">
+                <ProjectCard v-for="(project, index) in projects" :key="index" :project="project"></ProjectCard>
             </div>
         </section>
     </div>
@@ -173,6 +212,10 @@ const contact = {
 .hero-section {
     @apply m-auto flex h-screen w-4/5 flex-row flex-wrap items-center justify-center;
 
+    .highlighted-text {
+        @apply bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text font-bold text-transparent;
+    }
+
     @keyframes move {
         100% {
             transform: translate3d(0, 0, 1px) rotate(360deg);
@@ -188,6 +231,9 @@ const contact = {
         top: 0;
         left: 0;
         z-index: -1;
+
+        overflow-x: clip;
+        overflow-y: visible;
 
         .orb {
             overflow-x: hidden;
@@ -234,8 +280,16 @@ const contact = {
     }
 }
 
+.project-section {
+    @apply m-auto mb-14  w-full pt-14;
+    .project-container {
+        @apply grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4;
+    }
+}
+
 .contact-section {
     @apply flex h-screen flex-wrap;
+
     .content {
         @apply m-auto items-center py-12 lg:w-3/4 xl:w-3/5;
 
