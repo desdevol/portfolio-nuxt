@@ -14,6 +14,7 @@ useHead({
             content: 'Desmond Lee. Web developer from Malaysia. Tech stack: Vue, Laravel.',
         },
         {
+            hid: 'og:image',
             property: 'og:image',
             content: '/website-thumbnail.png',
         },
