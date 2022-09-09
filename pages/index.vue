@@ -16,7 +16,7 @@ useHead({
         {
             hid: 'og:image',
             property: 'og:image',
-            content: '/website-thumbnail.png',
+            content: 'https://portfolio-desdevol.vercel.app/img/website-thumbnail.png',
         },
     ],
 })
