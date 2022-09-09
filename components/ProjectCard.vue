@@ -3,6 +3,7 @@ interface Project {
     img?: string
     title: string
     desc: string
+    repo?: string
     url: string
     techUsed?: Array<string>
 }
@@ -36,14 +37,17 @@ const image = computed(() => {
                     <div
                         v-for="(tech, index) in project.techUsed"
                         :key="index"
-                        class="badge badge-outline badge-secondary mr-1 font-bold"
+                        class="badge badge-outline badge-secondary mr-1 mb-2 font-bold"
                     >
                         {{ tech }}
                     </div>
                 </div>
             </div>
-            <div class="mt-4 flex justify-end">
-                <a :href="project.url" class="btn btn-primary btn-ghost" target="_blank">See Demo</a>
+            <div class="mt-4 flex flex-row-reverse justify-between">
+                <a :href="project.url" class="btn" target="_blank">Demo</a>
+                <a v-if="project.repo" :href="project.repo" class="btn btn-ghost btn-circle p-0" target="_blank">
+                    <font-awesome-icon icon="fab fa-github" class="text-2xl" :title="`${project.title} Repo`" />
+                </a>
             </div>
         </div>
     </div>

@@ -63,6 +63,7 @@ const projects = [
     {
         title: 'Igfy',
         desc: 'A simple web app to let you mock and replace content of a instagram post then export into SVG!',
+        repo: 'https://github.com/desdevol/igfy-export',
         url: 'https://igfy-fillup.netlify.app/',
         img: 'img/igfy-mobile-preview.png',
         techUsed: ['Vue 3', 'Primevue'],
@@ -70,6 +71,7 @@ const projects = [
     {
         title: 'Interactive Site Plan Editor',
         desc: 'An editor that lets you plot polygons on image then exports in GeoJSON. Useful for building editor for site plan/floor plan.',
+        repo: 'https://github.com/desdevol/interactive-siteplan-editor',
         url: 'https://interactive-site-plan-editor.netlify.app/',
         img: 'img/interactive-site-plan-editor-preview.png',
         techUsed: ['Vue 3', 'Vuex', 'Quasar', 'Leaftet.js'],
@@ -77,6 +79,7 @@ const projects = [
     {
         title: 'Vuepress Note',
         desc: 'A simple docs built with Vuepress to note down my wordpress learnings.',
+        repo: 'https://github.com/desdevol/Wordpress-Notes',
         url: 'https://wordpress-notes.netlify.app/',
         img: 'img/wordpress-preview.png',
         techUsed: ['Vue 2', 'Vuepress'],
