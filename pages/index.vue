@@ -1,8 +1,4 @@
 <script lang="ts" setup>
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-
-gsap.registerPlugin(ScrollTrigger)
 useHead({
     title: 'Desdevol',
     meta: [
@@ -19,6 +15,7 @@ useHead({
             content: 'https://portfolio-desdevol.vercel.app/img/website-thumbnail.png',
         },
     ],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
 })
 
 const timelineItems = [
@@ -133,7 +130,7 @@ const contact = {
             <h2 class="section-title">About Me</h2>
 
             <div class="mb-8 grid grid-cols-1 gap-10 sm:grid-cols-[200px_minmax(auto,_1fr)]">
-                <img class="portrait-image" src="~/assets/img/portrait.jpg" alt="Desmond Lee" />
+                <img class="portrait-image" :src="'img/portrait.jpg'" alt="Desmond Lee" />
                 <div>
                     <p>
                         Graduated from Southern University College, I've been in the web development industry for 4
@@ -151,12 +148,12 @@ const contact = {
                     <!-- Tech Stack -->
                     <h3 class="mt-5 mb-4 text-2xl font-bold">My Tech Stack</h3>
                     <div class="flex gap-4">
-                        <font-awesome-icon icon="fab fa-vuejs" class="text-2xl md:text-3xl" title="Vue JS" />
-                        <font-awesome-icon icon="fab fa-laravel" class="text-2xl md:text-3xl" title="Laravel" />
+                        <Icon name="fa6-brands:vuejs" class="text-2xl md:text-3xl" title="Vue JS" />
+                        <Icon name="fa6-brands:laravel" class="text-2xl md:text-3xl" title="Laravel" />
 
-                        <font-awesome-icon icon="fab fa-sass" class="text-2xl md:text-3xl" title="Sass" />
-                        <font-awesome-icon icon="fab fa-git-alt" class="text-2xl md:text-3xl" title="Git" />
-                        <font-awesome-icon icon="fab fa-linux" class="text-2xl md:text-3xl" title="Linux" />
+                        <Icon name="fa6-brands:sass" class="text-2xl md:text-3xl" title="Sass" />
+                        <Icon name="fa6-brands:git-alt" class="text-2xl md:text-3xl" title="Git" />
+                        <Icon name="fa6-brands:linux" class="text-2xl md:text-3xl" title="Linux" />
                     </div>
                 </div>
             </div>
@@ -182,12 +179,12 @@ const contact = {
             <div class="mb-12 flex justify-center">
                 <div class="grid" :style="{ gridTemplateColumns: 'min-content 1fr', gridGap: '16px 12px' }">
                     <div class="flex justify-center">
-                        <font-awesome-icon icon="fab fa-discord" class="text-2xl md:text-3xl" title="Discord" />
+                        <Icon name="fa6-brands:discord" class="text-2xl md:text-3xl" title="Discord" />
                     </div>
                     <span class="text-lg md:text-2xl">{{ contact.discord }}</span>
 
                     <div class="flex justify-center">
-                        <font-awesome-icon icon="fas fa-envelope" class="text-2xl md:text-3xl" title="Email" />
+                        <Icon name="fa6-solid:envelope" class="text-2xl md:text-3xl" title="Email" />
                     </div>
                     <span class="text-lg md:text-2xl">{{ contact.email }}</span>
                 </div>
@@ -195,21 +192,13 @@ const contact = {
 
             <div class="flex justify-center">
                 <a :href="contact.github" class="contact-floating-item px-6" target="_blank" rel="noopener">
-                    <font-awesome-icon icon="fab fa-github" class="text-5xl sm:text-6xl md:text-8xl" title="Github" />
+                    <Icon name="fa6-brands:github" class="text-5xl sm:text-6xl md:text-8xl" title="Github" />
                 </a>
                 <a :href="contact.linkedIn" class="contact-floating-item px-6" target="_blank" rel="noopener">
-                    <font-awesome-icon
-                        icon="fab fa-linkedin"
-                        class="text-5xl sm:text-6xl md:text-8xl"
-                        title="LinkedIn"
-                    />
+                    <Icon name="fa6-brands:linkedin" class="text-5xl sm:text-6xl md:text-8xl" title="LinkedIn" />
                 </a>
                 <a :href="contact.instagram" class="contact-floating-item px-6" target="_blank" rel="noopener">
-                    <font-awesome-icon
-                        icon="fab fa-instagram"
-                        class="text-5xl sm:text-6xl md:text-8xl"
-                        title="Instagram"
-                    />
+                    <Icon name="fa6-brands:instagram" class="text-5xl sm:text-6xl md:text-8xl" title="Instagram" />
                 </a>
             </div>
         </div>

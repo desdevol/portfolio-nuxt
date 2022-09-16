@@ -46,7 +46,7 @@ const image = computed(() => {
             <div class="mt-4 flex flex-row-reverse justify-between">
                 <a :href="project.url" class="btn" target="_blank">Demo</a>
                 <a v-if="project.repo" :href="project.repo" class="btn btn-ghost btn-circle p-0" target="_blank">
-                    <font-awesome-icon icon="fab fa-github" class="text-2xl" :title="`${project.title} Repo`" />
+                    <Icon name="fa6-brands:github" class="text-2xl" :title="`${project.title} Repo`" />
                 </a>
             </div>
         </div>

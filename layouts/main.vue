@@ -14,14 +14,14 @@ const isSidebarOpened = computed(() => store.isSidebarOpened)
             <!-- Nav Item -->
             <div class="hidden flex-none md:block">
                 <ul class="menu menu-horizontal p-0">
-                    <a href="/#about" class="btn btn-ghost btn-md mx-1 normal-case">About</a>
-                    <a href="/#project" class="btn btn-ghost btn-md mx-1 normal-case">Projects</a>
-                    <a href="/#contact" class="btn btn-ghost btn-md mx-1 normal-case">Contact</a>
+                    <a href="#about" class="btn btn-ghost btn-md mx-1 normal-case">About</a>
+                    <a href="#project" class="btn btn-ghost btn-md mx-1 normal-case">Projects</a>
+                    <a href="#contact" class="btn btn-ghost btn-md mx-1 normal-case">Contact</a>
                 </ul>
             </div>
             <!-- Sidebar Toggle -->
             <button class="btn btn-ghost md:hidden" @click="store.openSidebar">
-                <font-awesome-icon icon="fas fa-bars" class="text-xl" />
+                <Icon name="fa6-solid:bars" class="text-xl" />
             </button>
         </div>
         <!-- Sidebar/Drawer -->
@@ -34,13 +34,13 @@ const isSidebarOpened = computed(() => store.isSidebarOpened)
                 <div class="flex justify-between">
                     <a href="/" class="btn btn-ghost btn-md text-xl normal-case">Desdevol</a>
                     <button class="btn" @click="store.closeSidebar">
-                        <font-awesome-icon icon="fas fa-close" class="text-xl" />
+                        <Icon name="fa6-solid:xmark" class="text-xl" />
                     </button>
                 </div>
                 <div class="mt-5">
-                    <a href="/#about" class="sidebar-item" @click="store.closeSidebar">About</a>
-                    <a href="/#project" class="sidebar-item" @click="store.closeSidebar">Projects</a>
-                    <a href="/#contact" class="sidebar-item" @click="store.closeSidebar">Contact</a>
+                    <a href="#about" class="sidebar-item" @click="store.closeSidebar">About</a>
+                    <a href="#project" class="sidebar-item" @click="store.closeSidebar">Projects</a>
+                    <a href="#contact" class="sidebar-item" @click="store.closeSidebar">Contact</a>
                 </div>
             </div>
         </Transition>
