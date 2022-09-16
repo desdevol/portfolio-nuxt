@@ -230,7 +230,7 @@ const contact = {
         }
     }
     $orbSize: 450px;
-    $animationDuration: 6s;
+    $animationDuration: 6;
     $amount: 2;
     .orb-canvas {
         width: 100%;
@@ -264,7 +264,7 @@ const contact = {
                     top: $i * 10 + 10%;
                     left: $i * 15 + 20%;
                     animation-duration: calc(random($animationDuration * 10) / 10) * 1s + 15s;
-                    animation-delay: calc(random(($animationDuration + 10s) * 10) / 10) * -1s;
+                    animation-delay: calc(random(($animationDuration + 10) * 10) / 10) * -1s;
                     transform-origin: 0;
                 }
             }
