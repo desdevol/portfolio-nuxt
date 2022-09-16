@@ -9,7 +9,7 @@ const isSidebarOpened = computed(() => store.isSidebarOpened)
         <!-- Topnav -->
         <div class="navbar fixed z-10 bg-base-100/60 backdrop-blur-sm">
             <div class="flex-1">
-                <a href="/" class="btn btn-ghost btn-md text-xl normal-case">Desdevol</a>
+                <NuxtLink to="/" class="btn btn-ghost btn-md text-xl normal-case">Desdevol</NuxtLink>
             </div>
             <!-- Nav Item -->
             <div class="hidden flex-none md:block">
@@ -32,7 +32,7 @@ const isSidebarOpened = computed(() => store.isSidebarOpened)
                 tabindex="-1"
             >
                 <div class="flex justify-between">
-                    <a href="/" class="btn btn-ghost btn-md text-xl normal-case">Desdevol</a>
+                    <NuxtLink to="/" class="btn btn-ghost btn-md text-xl normal-case">Desdevol</NuxtLink>
                     <button class="btn" @click="store.closeSidebar">
                         <Icon name="fa6-solid:xmark" class="text-xl" />
                     </button>

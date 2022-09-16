@@ -1,0 +1,1 @@
+npx nuxi generate && cd dist && git init && git remote add origin git@github.com:desdevol/desdevol.github.io.git && git add * && git commit --message=\"update nuxt static generated site\" && git push -f origin master

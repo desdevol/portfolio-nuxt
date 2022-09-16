@@ -9,5 +9,4 @@ export default defineNuxtConfig({
             link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
         },
     },
-    routes: { '/': { prerender: true }, '/*': { cors: true } },
 })
